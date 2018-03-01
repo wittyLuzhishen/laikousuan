@@ -1,0 +1,26 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;  
+} 
+
+.yellow-border {
+    border: 1rpx solid yellow;
+}
+
+.red-border {
+    border: 1rpx solid red;
+}
+
+.blue-border {
+    border: 1rpx solid blue;
+}
+
+.green-border {
+    border: 1rpx solid green;
+}

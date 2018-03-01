@@ -1,0 +1,50 @@
+/* pages/game/game.wxss */
+.question-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+}
+
+.operator {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.ans {
+    margin-top: 20rpx;
+    border: 1rpx solid greenyellow;
+    width: 150rpx;
+}
+
+.empty {
+    flex: 1;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.exit {
+    margin-left: 50rpx;
+}
+
+.indicator {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: -100rpx;  
+    margin-bottom: 50rpx;
+}
+
+.left-time {
+    margin-right: 50rpx;
+    vertical-align: center;
+    height: 100%;
+}

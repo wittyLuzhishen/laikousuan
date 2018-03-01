@@ -1,0 +1,24 @@
+<view class="container">
+    <view class='indicator'>
+        <button class='exit' type='primary' bindtap='exit' size='mini'>退出</button>
+        <view class='empty'></view>
+        <text class="left-time">{{leftTime}}秒</text>
+    </view>
+
+    <text>第{{questionIndex}}题</text>
+    <view class='question-container'>
+        <view class='column'>
+            <view class='empty'></view>
+            <text>{{operator}}</text>
+        </view>
+        <view class='operator'>
+            <text class='text-align-right'>{{n1}}</text>
+            <text class='text-align-right'>{{n2}}</text>
+        </view>
+        <view class='column'>
+            <view class='empty'></view>
+            <text>=</text>
+        </view>
+    </view>
+    <input class='ans text-align-right' type='number' maxlength='10' disabled='{{inputDisable}}' focus='{{inputFocus}}' confirm-type='done' confirm-hold='true' bindinput='onAnsInput' cursor-spacing='20px'/>
+</view>
