@@ -5,6 +5,7 @@ const multi = 2;
 const div = 3;
 const timeoutSecond = 10;
 var that;
+var manualSubmited = false;// 是否进行了手动交卷
 
 function randomFrom(lowerValue, upperValue) {
     return Math.floor(Math.random() * (upperValue - lowerValue + 1) + lowerValue);
@@ -42,20 +43,27 @@ function judge() {
     }
 }
 
+function setViewAndJudge() {
+    that.setData({
+        inputDisable: true,
+        inputFocus: false,
+    });
+    console.log(that.ans + ', ' + that.userAns);
+    setTimeout(judge, 100);// 为了让键盘有时间收起来
+}
+
+/**
+ * 倒计时
+*/
 function countDown() {
-    if (app.globalData.gameover) {
+    if (manualSubmited || app.globalData.gameover) {
         return;
     }
     let newLeftTime = that.data.leftTime - 1;
     that.setData({ leftTime: newLeftTime })
     if (newLeftTime <= 0) {
         console.log('timeout');
-        that.setData({
-            inputDisable: true,
-            inputFocus: false,
-        });
-        console.log(that.ans + ', ' + that.userAns);
-        setTimeout(judge, 100);
+        setViewAndJudge();
     } else {
         setTimeout(countDown, 1000);
     }
@@ -114,7 +122,7 @@ Page({
         });
 
         that = this;
-
+        manualSubmited = false;
         setTimeout(countDown, 1000);
 
     },
@@ -135,6 +143,10 @@ Page({
                 }
             }
         })
+    },
+    manualSubmit: function() {
+        manualSubmited = true;
+        setViewAndJudge();
     },
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
