@@ -57,5 +57,22 @@ Page({
       wx.redirectTo({
           url: '/pages/game/game',
       })
-  }
+  },
+  onShareAppMessage: function (res) {
+      if (res.from === 'button') {
+          // 来自页面内转发按钮
+          console.log(res.target)
+      }
+      return {
+          title: '来口算',
+          path: '/page/index/index',
+          desc: '一起来口算吧',
+          success: function (res) {
+              // 转发成功
+          },
+          fail: function (res) {
+              // 转发失败
+          }
+      }
+  },
 })
