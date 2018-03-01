@@ -2,6 +2,7 @@
     <view class='indicator'>
         <button class='exit' type='primary' bindtap='exit' size='mini'>退出</button>
         <view class='empty'></view>
+        <button type='primary' size='mini' plain bindtap='manualSubmit'>提交</button>
         <text class="left-time">{{leftTime}}秒</text>
     </view>
 
