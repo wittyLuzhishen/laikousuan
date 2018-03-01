@@ -156,6 +156,7 @@ Page({
         return {
             title: '来口算',
             path: '/page/index/index',
+            desc: '一起来口算吧',
             success: function (res) {
                 // 转发成功
             },
